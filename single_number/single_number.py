@@ -11,17 +11,17 @@ def single_number(arr):
         # Need to loop through the list
         # For each number we need to find out of that same number exists anywhere else in the list.
             # If the number does not exist anywhere else in the list then we return that number.
+        ##########################################################################################
+        # The above plan failed. New Plan:
+            # Remove all the duplicates from the array and set that to a new array variable
+            # Sum up the numbers in that array
+            # Multiply that sum by 2
+            # Subtract the sum of the numbers in the original array.
+            # Return the difference.
     # E:
-    print(arr)
-    while len(arr) > 1:
-        for i in arr:
-            if arr[0] == i:
-                del arr[0]
-                arr.remove(i)
-            elif arr[1] == i:
-                del arr[1]
-                arr.remove(i)
-    return arr[0]
+    arr_without_duplicates = set(arr)
+    return 2 * sum(arr_without_duplicates) - sum(arr)
+
 
 
 
