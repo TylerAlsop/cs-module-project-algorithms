@@ -12,16 +12,17 @@ def single_number(arr):
         # For each number we need to find out of that same number exists anywhere else in the list.
             # If the number does not exist anywhere else in the list then we return that number.
     # E:
-    i = 0
-    j = 0
-    current_index = arr[i]
-    while i <= len(arr):
-        for j in arr:
-            if current_index == j:
-                i += 1
-                single_number(arr)
-            else:
-                return j
+    print(arr)
+    while len(arr) > 1:
+        for i in arr:
+            if arr[0] == i:
+                del arr[0]
+                arr.remove(i)
+            elif arr[1] == i:
+                del arr[1]
+                arr.remove(i)
+    return arr[0]
+
 
 
 if __name__ == '__main__':
