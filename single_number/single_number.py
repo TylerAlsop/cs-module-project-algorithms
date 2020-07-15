@@ -14,17 +14,14 @@ def single_number(arr):
     # E:
     i = 0
     j = 0
-    while len(arr) > 1:
-        current_index = arr[i]
-
+    current_index = arr[i]
+    while i <= len(arr):
         for j in arr:
-            arr.remove(current_index)
-            if j == current_index:
-                arr.remove(j)
+            if current_index == j:
                 i += 1
+                single_number(arr)
             else:
                 return j
-
 
 
 if __name__ == '__main__':
