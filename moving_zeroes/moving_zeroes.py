@@ -8,22 +8,19 @@ def moving_zeroes(arr):
         # Recieves a list of numbers.
         # Function needs to move all non-zero numbers to the right of the array.
     # P:
-        # For each of the non-zero numbers they need to be moved to the 
+        # For each of the non-zero numbers they need to be moved to the right of the array.
+        ##########################################################################################
+        # The above plan failed. New Plan:
+            # Create a filter
     # E:
-    temp_index = 0
+    temp_arr_1 = []
+    count = 0
     for i in arr:
-        print(arr)
         if arr[i] != 0:
-            arr[temp_index] = arr[i]
-            temp_index += 1
-            print(arr)
-
-    while temp_index < len(arr):
-        arr[temp_index] = 0
-        temp_index += 1
-            
+            arr[count + 1] = arr[i]
+    while count < arr_length:
+        arr[count + 1] = 0
     print(arr)
-
 
 
 if __name__ == '__main__':
