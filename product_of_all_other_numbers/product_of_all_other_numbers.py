@@ -2,7 +2,6 @@
 Input: a List of integers
 Returns: a List of integers
 '''
-import numpy
 
 def product_of_all_other_numbers(arr):
     # Your code here
@@ -14,12 +13,28 @@ def product_of_all_other_numbers(arr):
         # Need to loop through the list
         # For each number we will have a variable called result.
         # Result will equal itself multiplied by the number and then divided by the number.
-    for i in arr:
-        result = numpy.prod(arr) / i
-        print(arr)
-        return result
+        ##########################################################################################
+        # The above plan failed. New Plan:
+            # Create an empty array to put the altered numbers
+            # For each number (i) in the range equal to the length of the array:
+                # Create a variable called product and make it equal to one.
+                # Then again for each number (j) in the range equal to the length of the array:
+                    # If j does not equal i:
+                        # Then we increment the product by multiplying it by the number in the index of j.
+                # Then append the new product to the altered array that we created (do this in the for loop of j).
+            # Finally return the altered array.
+    altered_arr = []
+    for i in range(len(arr)):
+        product = 1
+        for j in range(len(arr)):
+            if j != i:
+                product *= arr[j]
 
+        altered_arr.append(product)
     print(arr)
+    
+    return altered_arr
+
 
 
 
