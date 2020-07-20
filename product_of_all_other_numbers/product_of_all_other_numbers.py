@@ -2,10 +2,43 @@
 Input: a List of integers
 Returns: a List of integers
 '''
+
 def product_of_all_other_numbers(arr):
     # Your code here
+    # U:
+        # Recieves a list of numbers.
+        # Function needs to return an array where each number has been replaced by the product of all the other numbers in the array excluding the number itself.
+    # P:
+        # We are going to multipy all of the numbers in the list and then divide by the current number.
+        # Need to loop through the list
+        # For each number we will have a variable called result.
+        # Result will equal itself multiplied by the number and then divided by the number.
+        ##########################################################################################
+        # The above plan failed. New Plan:
+            # Create an empty array to put the altered numbers
+            # For each number (i) in the range equal to the length of the array:
+                # Create a variable called product and make it equal to one.
+                # Then again for each number (j) in the range equal to the length of the array:
+                    # If j does not equal i:
+                        # Then we increment the product by multiplying it by the number in the index of j.
+                # Then append the new product to the altered array that we created (do this in the for loop of j).
+            # Finally return the altered array.
+    altered_arr = []
+    for i in range(len(arr)):
+        product = 1
+        for j in range(len(arr)):
+            if j != i:
+                product *= arr[j]
 
-    pass
+        altered_arr.append(product)
+    print(arr)
+    
+    return altered_arr
+
+
+
+
+    
 
 
 if __name__ == '__main__':
@@ -14,3 +47,6 @@ if __name__ == '__main__':
     arr = [2, 6, 9, 8, 2, 2, 9, 10, 7, 4, 7, 1, 9, 5, 9, 1, 8, 1, 8, 6, 2, 6, 4, 8, 9, 5, 4, 9, 10, 3, 9, 1, 9, 2, 6, 8, 5, 5, 4, 7, 7, 5, 8, 1, 6, 5, 1, 7, 7, 8]
 
     print(f"Output of product_of_all_other_numbers: {product_of_all_other_numbers(arr)}")
+
+##########################################################################################
+# The above plan failed. New Plan:
